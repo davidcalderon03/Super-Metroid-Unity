@@ -1,0 +1,23 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class TextEnergy : MonoBehaviour
+{
+    TMPro.TextMeshProUGUI energyText;
+    PlayerItems playerItems;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        energyText = GetComponent<TMPro.TextMeshProUGUI>();
+        playerItems = FindObjectOfType<PlayerItems>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        energyText.text = playerItems.GetEnergy().ToString();
+    }
+}
